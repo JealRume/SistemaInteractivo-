@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Datos con JS</title>
+    <link rel="stylesheet" href="/src/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema Interactivo de Gestión de Datos</h1>
+    </header>
+
+    <main class="container">
+        <!-- Formulario de Entrada (TASK 1 y Validación) -->
+        <section class="card">
+            <h2>Agregar Producto (Objeto y Map)</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="prodId">ID Único:</label>
+                    <input type="text" id="prodId" placeholder="Ej: PROD10" required>
+                </div>
+                <div class="form-group">
+                    <label for="prodNombre">Nombre:</label>
+                    <input type="text" id="prodNombre" placeholder="Ej: Teclado Mecánico" required>
+                </div>
+                <div class="form-group">
+                    <label for="prodPrecio">Precio ($):</label>
+                    <input type="number" id="prodPrecio" placeholder="Ej: 85" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="prodCategoria">Categoría:</label>
+                    <input type="text" id="prodCategoria" placeholder="Ej: Accesorios" required>
+                </div>
+                <button type="submit">Guardar Producto</button>
+            </form>
+            <div id="errorMsg" class="error-msg"></div>
+        </section>
+
+        <!-- Zona Interactiva del SET (TASK 2) -->
+        <section class="card">
+            <h2>Gestión de Números Únicos (Set)</h2>
+            <div class="set-actions">
+                <input type="number" id="setNumber" placeholder="Número">
+                <button id="addSetBtn">Añadir al Set</button>
+                <button id="deleteSetBtn" class="btn-danger">Eliminar del Set</button>
+            </div>
+            <div id="setFeedback"></div>
+        </section>
+
+        <!-- Tableros de Visualización (TASK 4 y TASK 5) -->
+        <section class="results">
+            <div class="card panel">
+                <h3>Inventario de Productos (Objeto - for...in)</h3>
+                <ul id="listaObjetos"></ul>
+            </div>
+
+            <div class="card panel">
+                <h3>Elementos del Set (Set - for...of)</h3>
+                <div id="vistaSet" class="badge-container"></div>
+            </div>
+
+            <div class="card panel">
+                <h3>Categorías Asociadas (Map - forEach)</h3>
+                <ul id="listaMap"></ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Conexión con tu archivo JS -->
+    <script src="/src/views/sistema_interactivo.js"></script>
+</body>
+</html>
