@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini App Integral - Módulo 3</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 0 20px; }
+        form { display: flex; gap: 10px; margin-bottom: 20px; }
+        input { flex: 1; padding: 8px; }
+        button { padding: 8px 15px; cursor: pointer; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; align-content: center; padding: 10px; border-bottom: 1px solid #eee; }
+        .error { color: red; font-size: 0.9rem; margin-top: -15px; margin-bottom: 15px; display: none; }
+        .api-actions { margin-top: 20px; display: flex; gap: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Gestor de Tareas</h1>
+
+    <!-- Formulario para Captura de Datos -->
+    <form id="todoForm">
+        <input type="text" id="taskInput" placeholder="Escribe una nueva tarea..." required>
+        <button type="submit">Agregar</button>
+    </form>
+    <div id="errorMessage" class="error">El campo no puede estar vacío ni contener solo espacios.</div>
+
+    <!-- Lista Desplegable Dinámica -->
+    <ul id="taskList"></ul>
+
+    <!-- Sincronización con la API -->
+    <div class="api-actions">
+        <button id="syncApiBtn" style="background-color: #4CAF50; color: white; border: none;">Cargar desde API (GET)</button>
+    </div>
+
+    <!-- Enlace al archivo de lógica -->
+    <script src="app.js"></script>
+</body>
+</html>
